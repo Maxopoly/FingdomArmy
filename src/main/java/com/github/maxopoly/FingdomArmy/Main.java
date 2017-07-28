@@ -19,6 +19,11 @@ public class Main {
 		final String host = "localhost";
 		final int port = 25565;
 		int connections = 100;
+		if(args.length != 0) {
+			try {
+				connections = Integer.parseInt(args[0]);
+			catch (NumberFormatException e) {}
+		}
 		logger.error("Starting " + connections + " connections  to " + host + ":" + port);
 		for (int i = 0; i < connections; i++) {
 			final String name = "botAcc" + i;
